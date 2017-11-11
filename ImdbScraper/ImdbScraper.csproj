@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9F4F3A67-CC0D-4558-B4F0-A2559B1BECF3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImdbScraper</RootNamespace>
+    <AssemblyName>ImdbScraper</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\AngleSharp.0.9.9\lib\net45\AngleSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unidecode.NET, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unidecode.NET.1.1.1\lib\net45\Unidecode.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IImdbService.cs" />
+    <Compile Include="ImdbConfig.cs" />
+    <Compile Include="ImdbHelper.cs" />
+    <Compile Include="ImdbService.cs" />
+    <Compile Include="ImdbServiceException.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\Keyword.cs" />
+    <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\MediaCredits.cs" />
+    <Compile Include="Models\Network.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\PersonCredits.cs" />
+    <Compile Include="Models\SearchResult.cs" />
+    <Compile Include="Models\Season.cs" />
+    <Compile Include="Models\Title.cs" />
+    <Compile Include="Models\Video.cs" />
+    <Compile Include="ParserException.cs" />
+    <Compile Include="Parsers\IParser.cs" />
+    <Compile Include="Parsers\MediaCreditsParser.cs" />
+    <Compile Include="Parsers\NewMoviesParser.cs" />
+    <Compile Include="Parsers\PersonCreditsParser.cs" />
+    <Compile Include="Parsers\PersonParser.cs" />
+    <Compile Include="Parsers\SearchResultsParser.cs" />
+    <Compile Include="Parsers\SeasonParser.cs" />
+    <Compile Include="Parsers\SimilarTitlesParser.cs" />
+    <Compile Include="Parsers\TitleChartParser.cs" />
+    <Compile Include="Parsers\TitleParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
