@@ -61,3 +61,11 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+###############################################################################
+# Vendored files and directories are excluded from language
+# statistics.
+#
+# Regexps that are matched against the file pathname.
+###############################################################################
+*/[Tt]est[Dd]ata/* linguist-vendored=true
