@@ -76,7 +76,7 @@ namespace ImdbScraper
 
         private static string[] GetUrlParts(string url)
         {
-            var queryStringIndex = url.IndexOf("?", StringComparison.InvariantCulture);
+            var queryStringIndex = url.IndexOf("?", StringComparison.OrdinalIgnoreCase);
             if (queryStringIndex > -1)
             {
                 url = url.Substring(0, queryStringIndex);
